@@ -6,6 +6,9 @@ module.exports = {
   entry: "./src/index.tsx",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+    alias: {
+      '@': path.resolve(__dirname, "src"),
+    }
   },
   output: {
     filename: "[name].[contenthash].js",
