@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/ma-jiangbo/react-demo#readme",
   "dependencies": {
+    "dayjs": "^1.11.3",
+    "leancloud-storage": "^4.12.3",
+    "mobx": "^6.6.1",
+    "mobx-react-lite": "^3.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6"

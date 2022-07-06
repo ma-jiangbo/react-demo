@@ -1,0 +1,9 @@
+.layout {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.layout > main {
+    padding: 12px;
+}
