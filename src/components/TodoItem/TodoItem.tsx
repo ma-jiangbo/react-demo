@@ -12,6 +12,9 @@ const TodoItem: React.FC<SelfProps> = (props) => {
   const [todoValue, setTodValue] = useState(props?.data?.content || "");
 
   const onEdit = () => {
+    if (!props.data) {
+        setTodValue('')
+    }
     setEdit(true);
   };
 
@@ -22,7 +25,6 @@ const TodoItem: React.FC<SelfProps> = (props) => {
       await addTodo(todoValue);
     }
     setEdit(false);
-    setTodValue('')
   };
 
   const onDelete = () => {
