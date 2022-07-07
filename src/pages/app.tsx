@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 import BasicLayout from '@/Layout/BasicLayout'
-import Home from './home'
-import Todo from './todo'
-import User from './user'
-import UserAccount from './user/account'
+import routers from '@/router/baseRouter'
 
 const App: React.FC = () => {
     return (
         <BasicLayout>
-            <Routes>
+            {useRoutes(routers)}
+            {/* <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/todo' element={<Todo />} />
                 <Route path='/user' element={<User />} />
                 <Route path='/user/account' element={<UserAccount />} />
-            </Routes>
+            </Routes> */}
         </BasicLayout>
     )
 }

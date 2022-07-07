@@ -2,3 +2,7 @@
     width: 150px;
     border: 1px solid #ccc;
 }
+.menuLevel {
+    display: flex;
+    flex-direction: column;
+}
