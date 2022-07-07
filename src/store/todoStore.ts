@@ -80,12 +80,14 @@ class Todo {
     const result = await todo.save();
     if (result.id) {
       runInAction(() => {
-        this.todoList.push({
+        const _todoList = [...this.todoList];
+        _todoList.push({
           objectId: result.id,
           content: value,
           createdAt: dayjs().valueOf(),
           updatedAt: dayjs().valueOf(),
-        });
+        });  
+        this.todoList = _todoList
       });
       if (callback) {
         callback();
@@ -93,7 +95,7 @@ class Todo {
     }
   };
 
-  editTodo = async (id: string, value: string) => {
+  editTodo = async (id: string, value?: string) => {
     if (!id) return;
     const todo = Object.createWithoutData("TODO", id);
     // 删除
@@ -121,4 +123,4 @@ class Todo {
   };
 }
 
-export default Todo;
+export default new Todo();

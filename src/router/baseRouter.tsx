@@ -3,7 +3,7 @@ import Todo from "@/pages/todo";
 import User from "@/pages/user";
 import UserAccount from "@/pages/user/account";
 import React from "react";
-import { Navigate, RouteObject } from "react-router-dom";
+import { RouteObject } from "react-router-dom";
 
 const routers: RouteObject[] = [
     {

@@ -1,8 +1,51 @@
 .menu {
-    width: 150px;
+    width: 120px;
     border: 1px solid #ccc;
+    font-size: 18px;
+    transition: width .3s ease;
+    position: relative;
+}
+
+.control {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    transform: translateX(calc(100% + 10px));
+}
+
+.hideMenu {
+    width: 0px;
+    height: 0px;
+}
+.hideMenu  *:not(.control) {
+    visibility: hidden;
+}
+
+.menu > h3 {
+    width: 100%;
+    text-align: center;
 }
 .menuLevel {
     display: flex;
     flex-direction: column;
+}
+.menuItem {
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 12px;
+}
+.menuItem:hover {
+    background-color: #ddd;
+}
+
+.menuLevel2 > .menuItem {
+    height: 0px;
+    padding: 0px 12px;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+
+.menuItem:hover .menuItem {
+    height: 48px;
+    padding: 12px;
 }

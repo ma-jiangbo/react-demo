@@ -1,22 +1,25 @@
-import React, { useEffect } from 'react'
-import { observer, useLocalObservable } from 'mobx-react-lite'
-import TodoStore from '@/store/todoStore'
-import TodoItem from '@/components/TodoItem/TodoItem'
+import React, { useEffect } from "react";
+import { observer, useLocalObservable } from "mobx-react-lite";
+import todoStore from "@/store/todoStore";
+import TodoItem from "@/components/TodoItem/TodoItem";
 
 const Todo: React.FC = () => {
-    const { getTodoList, addTodo, editTodo, todoList } = useLocalObservable(() => new TodoStore())
+  const { getTodoList, todoList } = useLocalObservable(() => todoStore);
 
-    useEffect(() => {
-        getTodoList()
-    }, [])
+  useEffect(() => {
+    getTodoList();
+  }, []);
 
-    return (
-        <div>
-            <li>
-                {todoList.map(item => <TodoItem  key={item.objectId} data={item} />)}
-            </li>
-        </div>
-    )
-}
+  return (
+    <div>
+      <ul>
+        {todoList.map((item) => (
+          <TodoItem key={item.objectId} data={item} />
+        ))}
+        <TodoItem />
+      </ul>
+    </div>
+  );
+};
 
-export default observer(Todo)
+export default observer(Todo);

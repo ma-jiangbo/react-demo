@@ -5,5 +5,13 @@
     box-sizing: border-box;
 }
 .layout > main {
+    width: 100%;
+}
+.layout > main > header {
+    border: 1px solid #ddd;
+    padding-left: 20px;
+    text-align: center;
+}
+.layout > main > .page {
     padding: 12px;
 }
